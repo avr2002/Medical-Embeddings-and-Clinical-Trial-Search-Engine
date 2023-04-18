@@ -4,6 +4,8 @@ import re
 import string
 import numpy as np
 
+from ML_Pipeline.return_embed import get_mean_vector
+
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords       # used for preprocessing
@@ -11,6 +13,7 @@ from nltk.stem import WordNetLemmatizer # used for preprocessing
 nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('punkt')
+
 
 
 # Preprocessing
@@ -77,51 +80,79 @@ def lemmatize(text: str):
 
 # Preprocessing
 def preprocessing(text: str):
-    # text = text.strip()
-    
-    # lower-case the text
-    text = text_lowercase(text)
-    
-    # remove any urls in the text(if present)
-    text = remove_urls(text)
-    
-    # remove any numbers
-    text = remove_numbers(text)
-    
-    # remove any puntuations
-    text = remove_punctuation(text)
-    
-    # tokenize
-    text = tokenize(text)
-    
-    # remove stopwords
-    text = remove_stopwords(text)
-    
-    # lemmatize
-    text = lemmatize(text)
-    
-    text = " ".join(text)
-    return text
+    try:
+        # text = text.strip()
+
+        # lower-case the text
+        text = text_lowercase(text)
+        
+        # remove any urls in the text(if present)
+        text = remove_urls(text)
+        
+        # remove any numbers
+        text = remove_numbers(text)
+        
+        # remove any puntuations
+        text = remove_punctuation(text)
+        
+        # tokenize
+        text = tokenize(text)
+        
+        # remove stopwords
+        text = remove_stopwords(text)
+        
+        # lemmatize
+        text = lemmatize(text)
+        
+        text = " ".join(text)
+        return text
+    except Exception as e:
+        print(e)
 
 
 # Applying preprocessing and removing '\n' character
 
-def output_text(df, column_name):
-    for i in range(df.shape[0]):
-        text = str(df[column_name][i])
+def tokenize_text(df, column_name:str):
+    """
+    Takes in the dataframe(df) and column_name for text preprocessing
 
-        text = preprocessing(text)
+    Returns the list of tokenized words for each row of the column
+    """
+    try:
+        for i in range(df.shape[0]):
+            text = str(df[column_name][i])
 
-        text = text.replace("\n", " ")
+            text = preprocessing(text)
 
-        df[column_name].loc[i] = text
-        
-    x = [word_tokenize(word) for word in df[column_name]]
-    # Tokenizing data for training purpose
-    return x
+            text = text.replace("\n", " ")
+
+            df[column_name].loc[i] = text
+
+        # Tokenizing data for training purpose 
+        x = [word_tokenize(word) for word in df[column_name]]
+        return x
+    except Exception as e:
+        print(e)
 
 # Preprocessing input, because input should be in same form as training data set
-def preprocessing_input(query):
-    query = preprocessing(query)
-    query = query.replace('\n',' ')         
-    return query  
+
+# def preprocessing_input(query):
+#     try:
+#         query = preprocessing(query)
+#         query = query.replace('\n',' ')         
+#         return query  
+#     except Exception as e:
+#         print(e)
+
+def preprocessing_input(query, model):
+    """
+    We are providing query to analyze and the trained model to get it's vector rep.
+    """
+    try:
+        query = preprocessing(query)
+        query = query.replace("\n", ' ')
+        K = get_mean_vector(model=model, words=query)
+        
+        return K
+    except Exception as e:
+        print(e)

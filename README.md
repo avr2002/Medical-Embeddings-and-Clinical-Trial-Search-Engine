@@ -2,25 +2,33 @@
 
 ## 1. Create a new environment
 
-   `conda create -p med_venv python==3.10 -y`
-   `conda activate med_venv/`
+   - `conda create -p med_venv python==3.10 -y`
+   - `conda activate med_venv/`
 
 ## 2. Install all the requirements
 
-   `pip install -r src/requirements.txt`
+- `python -m pip install --upgrade pip`
+
+- `pip install -r src/requirements.txt`
+
+- `conda install jupyter` (to run the jupyter notebook)
 
 ## 3. Run the engine.py file to execute the code
 
-   `python src/engine.py`
+   `python engine.py` in src folder.
 
 
-- If getting this `Warning: LF will be replaced by CRLF the next time Git touches it`
-    - Run this command: `git config --global core.autocrlf false`
+* **
+
+- Links to solve some errors
+    - [Link-1](https://www.educative.io/answers/how-to-fix-the-error-fatal-the-remote-end-hung-up-unexpectedly)
+    - [Link-2](https://stackoverflow.com/questions/17628305/windows-git-warning-lf-will-be-replaced-by-crlf-is-that-warning-tail-backwar)
+    - [Link-3](https://stackoverflow.com/questions/39399804/updates-were-rejected-because-the-tip-of-your-current-branch-is-behind-its-remot)
 
    
 * **
 
-# <h1 align="center">Word2Vec and FastText Word Embedding with Gensim in Python</h1>
+# <h1 align="center">Word2Vec and FastText Word Embedding with Gensim</h1>
 
 ## Objective:
 
