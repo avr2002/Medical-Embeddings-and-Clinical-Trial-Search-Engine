@@ -57,3 +57,4 @@ def top_n(n:int, query:str, model, abs_vectors, df:pd.DataFrame):
         return df.iloc[idxs, [1,2,5,6]], cosine_vals
     except Exception as e:
         print(e)  
+        return

@@ -13,9 +13,10 @@
 
 - `conda install jupyter` (to run the jupyter notebook)
 
-## 3. Run the engine.py file to execute the code
+## 3. Code Execution
 
-   `python engine.py` in src folder.
+   - Run `python src/engine.py` to train the model
+   - Run `streamlit run src/app.py` to run the streamlit app
 
 
 * **
@@ -30,15 +31,9 @@
 
 # <h1 align="center">Word2Vec and FastText Word Embedding with Gensim</h1>
 
-## Objective:
+## Business Context:
 
-**This project aims to use the trained models (Word2Vec and FastText) to build a search engine and Streamlit UI.**
-
-The biggest challenge in the NLP domain is to extract the context from text data, and word embeddings are the solution that represents words as semantically meaningful dense vectors. They overcome many of the problems that other techniques like one-hot encodings and TFIDF have.
-
-
-Embeddings boost generalization and performance for downstream NLP applications even with fewer data. So, word embedding is the feature learning technique where words or phrases from the vocabulary are mapped to vectors of real numbers capturing the contextual hierarchy.
-
+We all must have wondered that if we search for a particular word in google, it does not show just the results that contain the very same word but also shows results that are very closely related to it. For example, if we search for the term ‘medicine’ in google, you can see results that not just include the word ‘medicine’ but also terms such as "health", "pharmacy", "WHO", and so on. So, google somehow understands that these terms are closely related to each other. This is where word embeddings come into the picture. Word embeddings are nothing but numerical representations of words in a sentence depending on the context.
 
 General word embeddings might not perform well enough on all the domains. Hence, we need to build domain-specific embeddings to get better outcomes. In this project, we will create medical word embeddings using Word2vec and FastText in python.
 
@@ -51,17 +46,19 @@ There are 10666 rows and 21 columns present in the dataset. The following two co
 * `Abstract`
 
 ## Aim
-The project aims to train the Skip-gram and FastText models for performing word embeddings and then building a search engine along with a Streamlit UI.
+**This project aims to use the trained models (Word2Vec and FastText) to build a search engine and Streamlit UI.**
+
+To develop a machine learning application that can understand the relationship and pattern between various words used together in the field of medical science, create a smart search engine for records containing those terms, and finally build a machine learning pipeline in azure to deploy and scale the application.
 
 ## Tech stack
 - **Language** - Python
-- **Libraries and Packages** - `pandas`, `numpy`, `matplotlib`, `plotly`, `gensim`, `streamlit`, `nltk`.
+- **Libraries and Packages** - `Pandas`, `Numpy`, `Matplotlib`, `Plotly`, `Gensim`, `Streamlit`, `NLTK`.
 
 ## Approach
 
 - **Check my Jupyter notebooks:**
-    - [Theory Notebook]()
-    - [Main Notebook]()
+    - [Theory Notebook](https://github.com/avr2002/Medical-Embeddings-and-Clinical-Trial-Search-Engine/blob/main/Notebooks/theory.ipynb)
+    - [Main Notebook](https://github.com/avr2002/Medical-Embeddings-and-Clinical-Trial-Search-Engine/blob/main/Notebooks/Medical_Embeddings.ipynb)
 
 1. Importing the required libraries
 2. Reading the dataset
