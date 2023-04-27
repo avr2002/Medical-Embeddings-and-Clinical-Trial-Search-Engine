@@ -18,15 +18,16 @@
    - Run `python src/engine.py` to train the model
    - Run `streamlit run src/app.py` to run the streamlit app
 
-
+   
 * **
 
-- Links to solve some errors
-    - [Link-1](https://www.educative.io/answers/how-to-fix-the-error-fatal-the-remote-end-hung-up-unexpectedly)
-    - [Link-2](https://stackoverflow.com/questions/17628305/windows-git-warning-lf-will-be-replaced-by-crlf-is-that-warning-tail-backwar)
-    - [Link-3](https://stackoverflow.com/questions/39399804/updates-were-rejected-because-the-tip-of-your-current-branch-is-behind-its-remot)
+### What does the code do??
 
-   
+- The Project aims to train SkipGram and FastText Models on [COVID-19 Clinical Trials Dataset](https://dimensions.figshare.com/articles/dataset/Dimensions_COVID19_publications_datasets_and_clinical_trials/11961063) and builds a Search Engine where user can type any COVID-19 related keyword and it presents all the top n similar results from the dataset
+
+- Application Demo
+![](output/project_demo.gif)
+
 * **
 
 # <h1 align="center">Word2Vec and FastText Word Embedding with Gensim</h1>
@@ -105,3 +106,10 @@ To develop a machine learning application that can understand the relationship a
 15. Creating a function to return top ‘n’ similar results for a given query
 16. Understanding the code for executing the Streamlit application.
 17. Run the Streamlit application.
+
+* **
+
+- Links to solve some errors
+    - [Link-1](https://www.educative.io/answers/how-to-fix-the-error-fatal-the-remote-end-hung-up-unexpectedly)
+    - [Link-2](https://stackoverflow.com/questions/17628305/windows-git-warning-lf-will-be-replaced-by-crlf-is-that-warning-tail-backwar)
+    - [Link-3](https://stackoverflow.com/questions/39399804/updates-were-rejected-because-the-tip-of-your-current-branch-is-behind-its-remot)
