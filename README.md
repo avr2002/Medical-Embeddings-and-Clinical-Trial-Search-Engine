@@ -28,6 +28,10 @@
 - Application Demo
 ![](output/project_demo.gif)
 
+
+- Architecture Diagram
+![](input/ArchitectureDiagram.png)
+
 * **
 
 # <h1 align="center">Word2Vec and FastText Word Embedding with Gensim</h1>
