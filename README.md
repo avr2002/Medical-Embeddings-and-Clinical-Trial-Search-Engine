@@ -26,11 +26,11 @@
 - The Project aims to train SkipGram and FastText Models on [COVID-19 Clinical Trials Dataset](https://dimensions.figshare.com/articles/dataset/Dimensions_COVID19_publications_datasets_and_clinical_trials/11961063) and builds a Search Engine where user can type any COVID-19 related keyword and it presents all the top n similar results from the dataset
 
 - Application Demo
-![](output/project_demo.gif)
+![Project Demo](output/project_demo.gif)
 
 
 - Architecture Diagram
-![](input/ArchitectureDiagram.png)
+![Project Architecture Diagram](input/ArchitectureDiagram.png)
 
 * **
 
